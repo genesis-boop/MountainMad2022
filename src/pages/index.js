@@ -12,19 +12,9 @@ const HomePage = (props) => {
   
   return (
     <div>
-<<<<<<< HEAD
-      <img
-        src={bgKitchen}
-        alt="background"
-        className="absolute object-cover w-full h-full"
-      />
-      <Navbar />
-      <LandingPage />
-=======
       <Navbar/>
       <MealList meals={props.mealList} />;
       <LandingPage/>
->>>>>>> 1db2816c65d84aa83754c0dbea3719f417f99c61
     </div>
   );
 };
