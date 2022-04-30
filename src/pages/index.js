@@ -4,16 +4,23 @@ import { MongoClient } from "mongodb";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import LandingPage from "./LandingPage";
-
-
+// get image from public/img/bgKitchen.jpg
+import bgKitchen from "../public/img/kitchen.jpg";
 
 const HomePage = (props) => {
+
+  
   return (
     <div>
-      <Navbar/>
-      <LandingPage/>
+      <img
+        src={bgKitchen}
+        alt="background"
+        className="absolute object-cover w-full h-full"
+      />
+      <Navbar />
+      <LandingPage />
     </div>
-  )
+  );
 };
 export async function getStaticProps() {
   const DATABASE_NAME = "Grandma";
@@ -29,14 +36,24 @@ export async function getStaticProps() {
   client.close();
 
   return {
+    //   props: {
+    //     mealList: meals.map((meal) => ({
+    //       id: meal._id.toString(),
+    //       name: meal.name,
+    //       image: meal.image_path,
+    //       dish: meal.dishes,
+    //       chef: meal.chef,
+    //     })),
+    //   },
+    // };
     props: {
-      mealList: meals.map((meal) => ({
-        id: meal._id.toString(),
-        name: meal.name,
-        image: meal.image_path,
-        dish: meal.dishes,
-        chef: meal.chef,
-      })),
+      //temporary data
+      mealList: [
+        {
+          id: "1",
+          name: "Chicken",
+        },
+      ],
     },
   };
 }
