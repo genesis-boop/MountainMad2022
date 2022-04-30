@@ -12,6 +12,7 @@ const HomePage = (props) => {
   
   return (
     <div>
+<<<<<<< HEAD
       <img
         src={bgKitchen}
         alt="background"
@@ -19,6 +20,11 @@ const HomePage = (props) => {
       />
       <Navbar />
       <LandingPage />
+=======
+      <Navbar/>
+      <MealList meals={props.mealList} />;
+      <LandingPage/>
+>>>>>>> 1db2816c65d84aa83754c0dbea3719f417f99c61
     </div>
   );
 };
@@ -47,6 +53,7 @@ export async function getStaticProps() {
     //   },
     // };
     props: {
+<<<<<<< HEAD
       //temporary data
       mealList: [
         {
@@ -54,6 +61,17 @@ export async function getStaticProps() {
           name: "Chicken",
         },
       ],
+=======
+      mealList: meals.map((meal) => ({
+        id: meal._id.toString(),
+        name: meal.name,
+        image: meal.image_path,
+        ingredients: meal.ingredients,
+        method: meal.method,
+        author: meal.author,
+        description: meal.description
+      })),
+>>>>>>> 1db2816c65d84aa83754c0dbea3719f417f99c61
     },
   };
 }

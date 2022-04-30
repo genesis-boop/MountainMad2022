@@ -7,13 +7,12 @@ const MealItem = ({ meal }) => {
         <h3 className="text-xl font-normal">
           {meal.name}
           <span className="px-3 font-light text-yellow-500">
-            ({meal.dish} dishes)
+            ({meal.ingredients} ingredients)
+            ({meal.method} method)
+            ({meal.description} description)
           </span>
         </h3>
-        <p className="text-gray-500 text-base">{meal.chef}</p>
-        <button className="bg-yellow-500 px-4 py-2 rounded-lg text-gray-50 font-medium mt-2">
-          Details
-        </button>
+        <p className="text-gray-500 text-base">{meal.author}</p>
       </div>
     </div>
   );
