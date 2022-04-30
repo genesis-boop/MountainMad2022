@@ -3,7 +3,6 @@ import { MongoClient } from "mongodb";
 
 import Link from "next/link";
 import Navbar from "../components/Navbar";
-import LandingPage from "./LandingPage";
 // get image from public/img/bgKitchen.jpg
 import bgKitchen from "../public/img/kitchen.jpg";
 
@@ -12,7 +11,7 @@ const HomePage = (props) => {
   
   return (
     <div>
-      <LandingPage/>
+      home
     </div>
   );
 };
