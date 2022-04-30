@@ -1,8 +1,10 @@
 import React from "react";
+import MealList from "../components/MealList";
+import { MongoClient } from "mongodb";
 //import navbar
 import Navbar from "../components/Navbar";
 
-function Recipes() {
+function Recipes(props) {
   return (
     <div>
       <Navbar />
@@ -16,17 +18,40 @@ function Recipes() {
           </h2>
 
           <section className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div className="text-gray-300 text-cs mt-4 flex flex-col bg-blue-200">
-              <p className="text-xl font-bold text-blue-500">Recipe Name</p>
-            </div>
-            <div className="text-gray-300 text-cs mt-4 flex flex-col bg-blue-200">
-              <p className="text-xl font-bold text-blue-500">Recipe Name 2</p>
-            </div>
+            <MealList meals={props.mealList} />;
           </section>
         </section>
       </main>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const DATABASE_NAME = "Grandma";
+  const DATABASE_PASSWORD = "1234";
+
+  const client = await MongoClient.connect(
+    `mongodb+srv://test:1234@mountain.rpwsn.mongodb.net/Grandma?retryWrites=true&w=majority`
+  );
+  const db = client.db();
+  const mealsCollection = db.collection("meals");
+  const meals = await mealsCollection.find().toArray();
+
+  client.close();
+
+  return {
+    props: {
+      mealList: meals.map((meal) => ({
+        id: meal._id.toString(),
+        name: meal.name,
+        image: meal.image_path,
+        ingredients: meal.ingredients,
+        method: meal.method,
+        author: meal.author,
+        description: meal.description
+      })),
+    },
+  };
 }
 
 export default Recipes;
