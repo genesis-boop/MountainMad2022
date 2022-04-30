@@ -2,7 +2,7 @@ import "../public/style/global.css";
 import Navbar from "../components/Navbar"
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <div className="">
+    <div >
       <Navbar/>
       <Component {...pageProps} />
     </div>
