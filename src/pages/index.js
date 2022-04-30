@@ -10,8 +10,8 @@ const HomePage = (props) => {
 
   
   return (
-    <div className="bg-[url('https://cdnb.artstation.com/p/assets/images/images/019/146/383/large/cartoonik-animation-cs-kitchen-bg.jpg?1562206094')] min-w-screen min-h-screen overflow-hidden bg-cover bg-center bg-clip-content">
-      Let's Eat, Grandma
+    <div className="flex justify-content align-middle bg-[url('https://cdnb.artstation.com/p/assets/images/images/019/146/383/large/cartoonik-animation-cs-kitchen-bg.jpg?1562206094')] min-w-screen min-h-screen overflow-hidden bg-cover bg-center bg-clip-content">
+      <img className="mx-auto my-auto" src="https://i.ibb.co/37JM0RV/Logo.png"/>
     </div>
   );
 };
