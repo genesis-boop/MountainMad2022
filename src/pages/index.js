@@ -53,15 +53,6 @@ export async function getStaticProps() {
     //   },
     // };
     props: {
-<<<<<<< HEAD
-      //temporary data
-      mealList: [
-        {
-          id: "1",
-          name: "Chicken",
-        },
-      ],
-=======
       mealList: meals.map((meal) => ({
         id: meal._id.toString(),
         name: meal.name,
@@ -71,7 +62,6 @@ export async function getStaticProps() {
         author: meal.author,
         description: meal.description
       })),
->>>>>>> 1db2816c65d84aa83754c0dbea3719f417f99c61
     },
   };
 }
