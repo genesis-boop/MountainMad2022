@@ -17,7 +17,7 @@ function Recipes(props) {
           </h2>
 
           <section className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <MealList meals={props.mealList} />;
+            <MealList meals={props.mealList} />
           </section>
         </section>
       </main>
