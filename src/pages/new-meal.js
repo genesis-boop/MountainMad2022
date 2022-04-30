@@ -4,8 +4,11 @@ const NewMealForm = () => {
   // use of useRef to capture input value
   const mealNameInputRef = useRef();
   const mealImagePathInputRef = useRef();
-  const mealNumberOfDishInputRef = useRef();
+  const DiscInputRef = useRef();
+  const ingredientInputRef = useRef();
   const chefInputRef = useRef();
+  const AuthorInputRef = useRef();
+  const CookingMethodInputRef = useRef();
 
   // use of useRouter from next/router to redirect this page to the Homepage
   const router = useRouter();
@@ -18,8 +21,10 @@ const NewMealForm = () => {
     const mealData = {
       name: mealNameInputRef.current.value,
       image_path: mealImagePathInputRef.current.value,
-      dishes: mealNumberOfDishInputRef.current.value,
-      chef: chefInputRef.current.value,
+      ingredients: ingredientInputRef.current.value,
+      method: CookingMethodInputRef.current.value,
+      author: AuthorInputRef.current.value,
+      description: DiscInputRef.current.value,
     };
 
     // use of Fetch API to make a request to the new-meal api and get back a response
@@ -49,32 +54,44 @@ const NewMealForm = () => {
       <form onSubmit={newMealHandler}>
         <input
           type="text"
-          placeholder="Meal Name"
+          placeholder="Title"
           required
           ref={mealNameInputRef}
           className={INPUT_STYLE}
         />
         <input
           type="text"
-          placeholder="Image Path"
+          placeholder="Image URL"
           required
           ref={mealImagePathInputRef}
           className={INPUT_STYLE}
         />
         <input
-          type="number"
-          max="5"
-          min="1"
-          placeholder="Number of Dishes"
+          type="text"
+          placeholder="Author"
           required
-          ref={mealNumberOfDishInputRef}
+          ref={AuthorInputRef}
           className={INPUT_STYLE}
         />
         <input
           type="text"
-          placeholder="Name of Chef"
+          placeholder="Cooking Method"
           required
-          ref={chefInputRef}
+          ref={CookingMethodInputRef}
+          className={INPUT_STYLE}
+        />
+        <input
+          type="text"
+          placeholder="Ingredients (,)"
+          required
+          ref={ingredientInputRef}
+          className={INPUT_STYLE}
+        />
+        <input
+          type="text"
+          placeholder="Discription"
+          required
+          ref={DiscInputRef}
           className={INPUT_STYLE}
         />
         <button

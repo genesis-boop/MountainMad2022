@@ -11,6 +11,7 @@ const HomePage = (props) => {
   return (
     <div>
       <Navbar/>
+      <MealList meals={props.mealList} />;
       <LandingPage/>
     </div>
   )
@@ -34,8 +35,10 @@ export async function getStaticProps() {
         id: meal._id.toString(),
         name: meal.name,
         image: meal.image_path,
-        dish: meal.dishes,
-        chef: meal.chef,
+        ingredients: meal.ingredients,
+        method: meal.method,
+        author: meal.author,
+        description: meal.description
       })),
     },
   };
