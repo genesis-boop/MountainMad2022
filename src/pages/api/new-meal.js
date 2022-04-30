@@ -2,14 +2,14 @@ import { MongoClient } from "mongodb";
 
 const handler = async (req, res) => {
   const DATABASE_NAME = "Grandma";
-  const DATABASE_PASSWORD = "1234567H";
+  const DATABASE_PASSWORD = "1234";
 
   if (req.method === "POST") {
     const client = await MongoClient.connect(
       `mongodb+srv://test:1234@mountain.rpwsn.mongodb.net/Grandma?retryWrites=true&w=majority`
     );
     const db = client.db();
-    const mealsCollection = db.collection("recipe");
+    const mealsCollection = db.collection("meals");
     await mealsCollection.insertOne(req.body);
 
     client.close();

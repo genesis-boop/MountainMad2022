@@ -1,8 +1,10 @@
 import MealItem from "./MealItem";
-const MealList = () => {
+const MealList = (props) => {
   return (
     <div className="flex flex-wrap">
-      <MealItem />
+      {props.meals.map((meal) => (
+        <MealItem meal={meal} key={meal.id} />
+      ))}
     </div>
   );
 };

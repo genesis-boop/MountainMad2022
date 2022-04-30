@@ -22,8 +22,8 @@ const NewMealForm = () => {
       chef: chefInputRef.current.value,
     };
 
-    // use of Fetch API to make a request to the new-entry api and get back a response
-    const response = await fetch("/api/new-entry", {
+    // use of Fetch API to make a request to the new-meal api and get back a response
+    const response = await fetch("/api/new-meal", {
       method: "POST",
       body: JSON.stringify(mealData),
       headers: {

@@ -30,10 +30,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/new-entry": [
+    "/new-meal": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/new-entry.js"
+      "static/chunks/pages/new-meal.js"
     ]
   },
   "ampFirstPages": []
