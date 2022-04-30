@@ -2,7 +2,7 @@ import "../public/style/global.css";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <div className="max-w-7xl mx-auto py-40">
+    <div className="">
       <Component {...pageProps} />
     </div>
   );

@@ -1,7 +1,19 @@
 import MealList from "../components/MealList";
 import { MongoClient } from "mongodb";
+
+import Link from "next/link";
+import Navbar from "../components/Navbar";
+import LandingPage from "./LandingPage";
+
+
+
 const HomePage = (props) => {
-  return <MealList meals={props.mealList} />;
+  return (
+    <div>
+      <Navbar/>
+      <LandingPage/>
+    </div>
+  )
 };
 export async function getStaticProps() {
   const DATABASE_NAME = "Grandma";
