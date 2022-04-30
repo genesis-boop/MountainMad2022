@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Navbar() {
   return (
-    <header className="bg-green-300 header p-3 drop-shadow-md">
+    <header className="bg-green-300 sticky top-0 z-50 p-3 drop-shadow-md">
       
       <div className=" overflow-x-auto overflow-y-hidden container mx-auto flex justify-between">
         <nav className="my-0 relative sm:container mx-auto flex gap-3 sm:gap-10">
