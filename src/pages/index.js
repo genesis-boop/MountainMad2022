@@ -12,8 +12,6 @@ const HomePage = (props) => {
   
   return (
     <div>
-      <Navbar/>
-      <MealList meals={props.mealList} />;
       <LandingPage/>
     </div>
   );

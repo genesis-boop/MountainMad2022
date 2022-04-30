@@ -7,7 +7,6 @@ import Navbar from "../components/Navbar";
 function Recipes(props) {
   return (
     <div>
-      <Navbar />
       <main className="bg-night-200 min-h-screen p-4 sm:p-12">
         <section className="container mx-auto ">
           <h1 className="text-5xl flex justify-center text-code text-blue-500">
